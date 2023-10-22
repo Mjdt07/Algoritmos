@@ -1,30 +1,46 @@
 #include <iostream>
 #include <list>
 
+using namespace std;
+
 int main() {
-    // Crear una lista para almacenar los números
-    std::list<int> numeros;
+    // Crea una lista para almacenar los números
+    list<double> numeros;
 
-    // Solicitar al usuario que ingrese la cantidad de números
-    int cantidad;
-    std::cout << "Ingrese la cantidad de números: ";
-    std::cin >> cantidad;
+    // Solicita la cantidad de números
+    double cantidad;
+    cout << "Ingrese la cantidad de numeros: ";
+    cin >> cantidad;
 
-    // Solicitar al usuario que ingrese los números y almacenarlos en la lista
+    // Solicita el ingreso de los números y los almacena en la lista
     for (int i = 0; i < cantidad; ++i) {
-        int numero;
-        std::cout << "Ingrese el número " << i + 1 << ": ";
-        std::cin >> numero;
+        double numero;
+        cout << "Ingrese el numero " << i + 1 << ": ";
+        cin >> numero;
 
         // Agregar el número al final de la lista
         numeros.push_back(numero);
+
     }
 
-    // Mostrar los números ingresados
-    std::cout << "Los números ingresados son: ";
-    for (int num : numeros) {
-        std::cout << num << " ";
+    // Calcular la suma de los números
+    double suma = 0;
+    double multiplicacion = 1;
+    double promedio = 2;
+
+    for (double num : numeros) {
+        suma += num;
+        multiplicacion *= num;
     }
+    
+     promedio = suma/cantidad;
+
+    cout << "\nLa suma de los numeros es: " << suma << endl;
+    cout << "\nLa multiplicacion de los numeros es: " << multiplicacion << endl;
+    cout << "\nEl promedio de los numeros es: " << promedio << endl;
+
+
+
 
     return 0;
 }
